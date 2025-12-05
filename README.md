@@ -381,8 +381,8 @@ We kindly encourage citation of our work if you find it useful.
 
 ```bibtex
 @misc{LongCat-Image,
-    author={Meituan},
-    title={LongCat},
+    author={Meituan LongCat Team},
+    title={LongCat Image Technical Report},
     year={2025},
     howpublished={\url{https://github.com/meituan-longcat/LongCat-Image}},
 }
