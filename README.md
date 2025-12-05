@@ -211,14 +211,76 @@ image.save('./edit_example.png')
 
 The quantitative evaluation results on public benchmarks demonstrate LongCat-Image's competitive performance:
 
-| **Benchmark**     | **FLUX.1&#8209;dev&#8200;** | **SD&#8209;3.5&#8209;large** | **HunyuanImage&#8209;3.0** | **Qwen&#8209;Image** | **Seedream&#8209;4.0** | **LongCat&#8209;Image** |
-|-------------------|----------------------|------------------------------|----------------------------|----------------------|------------------|--------------------------|
-| **Accessibility** | Open Source          | Open Source                  | Open Source                | Open Source          | Proprietary      | Open Source              |
-| **Parameters**  | 12B                  | 8B                           | 80B                        | 20B                  | -                | **6B**                   |
-| **GenEval↑**      | 0.66                 | 0.71                         | 0.72                       | **0.87**             | 0.84             | **0.87**                 |
-| **WISE↑**         | 0.50                 | 0.46                         | 0.57                       | 0.62                 | **0.78**         | 0.65                     |
-| **DPG↑**          | 83.84                | -                            | 86.10                      | **88.32**            | 88.25            | 86.80                    |
-| **Complex&#8209;zh↑** | -                  | -                            | 0.85                       | 0.87                 | 0.91             | **0.92**                 |
+| Model                   | Accessibility | Parameters | GenEval↑ | DPG↑      | WISE↑    |
+|-------------------------|---------------|------------|----------|----------|-----------|
+| FLUX.1&#8209;dev        | Open Source | 12B        | 0.66     | 83.84     | 0.50     |
+| GPT Image 1 [High]      | Proprietary | -          | 0.84     | 85.15     |-        |
+| HunyuanImage&#8209;3.0  | Open Source | 80B        | 0.72     |  86.10     |0.57     |
+| Qwen&#8209;Image        | Open Source | 20B        | **0.87** |  **88.32** |0.62     |
+| Seedream 4.0            | Proprietary | -          | 0.84     | 88.25     | **0.78** |
+| **LongCat&#8209;Image** | Open Source | **6B**     | **0.87** |  86.80     |0.65     |
+
+### Text Rendering
+
+<div style="overflow-x: auto; margin-bottom: 16px;">
+  <table style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">Model</th>
+        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">GlyphDraw2↑</th>
+        <th style="padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" colspan="3">CVTG‑2K↑</th>
+        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">ChineseWord↑</th>
+      </tr>
+      <tr>
+        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">Acc</th>
+        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">NED</th>
+        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">CLIPScore</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">HunyuanImage&#8209;3.0</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.78</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.7650</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.8765</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><strong>0.8121</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>58.5</u></td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Qwen&#8209;Image</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.93</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.8288</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.9297</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.8059</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">56.6</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Seedream&nbsp;4.0</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><b>0.97</b></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><strong>0.8917</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><strong>0.9507</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.7853</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">49.3</td>
+      </tr>
+      <tr >
+        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;"><strong>LongCat&#8209;Image</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.95</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.8658</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.9361</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;">0.7859</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><b>90.7</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+| **Model**         | **GlyphDraw2↑** | **CVTG&#8209;2K↑** | **ChineseWord↑** |
+|-------------------|-----------------|--------------------|------------------|
+| HunyuanImage-3.0  | 0.78            | 0.7650             | 58.5             |
+| Qwen-Image        | 0.93            | 0.8288             | 56.6             |
+| Seedream 4.0      | **0.97**        | **0.8917**         | 49.3             |
+| **LongCat-Image** | 0.95            | 0.8658             | **90.7**         |
+
 
 ### Human Evaluation (MOS)
 
