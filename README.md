@@ -212,13 +212,13 @@ image.save('./edit_example.png')
 The quantitative evaluation results on public benchmarks demonstrate LongCat-Image's competitive performance:
 
 | Model                   | Accessibility | Parameters | GenEval↑ | DPG↑      | WISE↑    |
-|-------------------------|---------------|------------|----------|----------|-----------|
-| FLUX.1&#8209;dev        | Open Source | 12B        | 0.66     | 83.84     | 0.50     |
-| GPT Image 1 [High]      | Proprietary | -          | 0.84     | 85.15     |-        |
-| HunyuanImage&#8209;3.0  | Open Source | 80B        | 0.72     |  86.10     |0.57     |
-| Qwen&#8209;Image        | Open Source | 20B        | **0.87** |  **88.32** |0.62     |
-| Seedream 4.0            | Proprietary | -          | 0.84     | 88.25     | **0.78** |
-| **LongCat&#8209;Image** | Open Source | **6B**     | **0.87** |  86.80     |0.65     |
+|-------------------------|---------------|:----------:|:--------:|:--------:|:--------:|
+| FLUX.1&#8209;dev        | Open Source   | 12B        | 0.66     | 83.84     | 0.50     |
+| GPT Image 1 [High]      | Proprietary   | -          | 0.84     | 85.15     | -        |
+| HunyuanImage&#8209;3.0  | Open Source   | 80B        | 0.72     | 86.10     | 0.57     |
+| Qwen&#8209;Image        | Open Source   | 20B        | **0.87** | **88.32** | 0.62     |
+| Seedream 4.0            | Proprietary   | -          | 0.84     | 88.25     | **0.78** |
+| **LongCat&#8209;Image** | Open Source   | **6B**     | **0.87** | 86.80     | 0.65     |
 
 ### Text Rendering
 
@@ -240,35 +240,35 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
     <tbody>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">HunyuanImage&#8209;3.0</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.78</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.7650</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.8765</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><strong>0.8121</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>58.5</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.78</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.7650</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.8765</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><strong>0.8121</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>58.5</u></td>
       </tr>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Qwen&#8209;Image</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.93</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.8288</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.9297</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.8059</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">56.6</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.93</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.8288</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.9297</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.8059</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">56.6</td>
       </tr>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Seedream&nbsp;4.0</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><b>0.97</b></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><strong>0.8917</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><strong>0.9507</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.7853</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">49.3</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><b>0.97</b></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><strong>0.8917</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><strong>0.9507</strong></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.7853</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">49.3</td>
       </tr>
-      <tr >
+      <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;"><strong>LongCat&#8209;Image</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.95</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.8658</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><u>0.9361</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">0.7859</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><b>90.7</b></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.95</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.8658</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.9361</u></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.7859</td>
+        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><b>90.7</b></td>
       </tr>
     </tbody>
   </table>
@@ -277,12 +277,11 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
 ### Human Evaluation (MOS)
 
 | **Model**         | **Alignment↑** | **Plausibility↑** | **Realism↑** | **Aesthetics↑** |
-|-------------------|----------------|-------------------|--------------|-----------------|
-| HunyuanImage-3.0  | 3.40           | 3.33              | 3.50         | 3.04            |
-| Qwen-Image        | 3.95           | 3.48              | 3.45         | 3.09            |
-| Seedream 4.0      | **4.25**       | **3.76**          | 3.54         | **3.10**        |
-| **LongCat-Image** | 3.99           | 3.48              | **3.60**     | 3.06            |
-
+|:------------------|:----------------:|:-----------------:|:------------:|:---------------:|
+| HunyuanImage‑3.0  | 3.40           | 3.33              | 3.50         | 3.04            |
+| Qwen‑Image        | 3.95           | 3.48              | 3.45         | 3.09            |
+| Seedream&nbsp;4.0  | **4.25**       | **3.76**          | 3.54         | **3.10**        |
+| **LongCat‑Image** | 3.99           | 3.48              | **3.60**     | 3.06            |
 
 ### Image Editing
 #### Performance comparison on CEdit-Bench and GEdit-Bench:
@@ -328,12 +327,13 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
 
 
 #### Human Evaluation (Win Rate)
+
 | **Models** | **Comprehensive Quality** | **Consistency** |
-|-----------|---------------------|--------------------------|
+|-----------|:-------------------------:|:-----------------:|
 | Nona Banana vs LongCat-Image-Edit | **60.8%** vs 39.2% | **53.9%** vs 46.1% | 
 | Seedream 4.0 vs LongCat-Image-Edit | **56.9%** vs 43.1% | **56.3%** vs 43.7% |
 | Qwen-Image-Edit [2509] vs LongCat-Image-Edit | 41.3% vs **58.7%** | 45.8% vs **54.2%** |
-| FLUX.1 Kontext [Pro] vs LongCat-Image-Edit | 39.5% vs **60.5%** | 37% vs **63%** | 
+| FLUX.1 Kontext [Pro] vs LongCat-Image-Edit | 39.5% vs **60.5%** | 37% vs **63%** |
 
 ## Training Pipeline
 
