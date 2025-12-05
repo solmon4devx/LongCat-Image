@@ -342,7 +342,7 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
 
 | **Models** | **Comprehensive Quality** | **Consistency** |
 |-----------|:-------------------------:|:-----------------:|
-| Nona Banana vs LongCat-Image-Edit | **60.8%** vs 39.2% | **53.9%** vs 46.1% | 
+| Nano Banana vs LongCat-Image-Edit | **60.8%** vs 39.2% | **53.9%** vs 46.1% | 
 | Seedream 4.0 vs LongCat-Image-Edit | **56.9%** vs 43.1% | **56.3%** vs 43.7% |
 | Qwen-Image-Edit [2509] vs LongCat-Image-Edit | 41.3% vs **58.7%** | 45.8% vs **54.2%** |
 | FLUX.1 Kontext [Pro] vs LongCat-Image-Edit | 39.5% vs **60.5%** | 37% vs **63%** |
