@@ -229,104 +229,61 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
       <tr>
         <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">Model</th>
         <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">
-          <div style="text-align: center;">GlyphDraw2↑</div>
+          <div align="center">GlyphDraw2↑</div>
         </th>
         <th style="padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" colspan="3">CVTG‑2K↑</th>
         <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">
-          <div style="text-align: center;">ChineseWord↑</div>
+          <div align="center">ChineseWord↑</div>
         </th>
       </tr>
       <tr>
         <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">
-          <div style="text-align: center;">Acc</div>
+          <div align="center">Acc</div>
         </th>
         <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">
-          <div style="text-align: center;">NED</div>
+          <div align="center">NED</div>
         </th>
         <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">
-          <div style="text-align: center;">CLIPScore</div>
+          <div align="center">CLIPScore</div>
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">HunyuanImage&#8209;3.0</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.78</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.7650</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.8765</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><strong>0.8121</strong></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><u>58.5</u></div>
-        </td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.78</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.7650</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.8765</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><strong>0.8121</strong></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><u>58.5</u></div></td>
       </tr>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Qwen&#8209;Image</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.93</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.8288</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.9297</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><u>0.8059</u></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">56.6</div>
-        </td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.93</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.8288</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.9297</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><u>0.8059</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">56.6</div></td>
       </tr>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Seedream&nbsp;4.0</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><b>0.97</b></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><strong>0.8917</strong></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><strong>0.9507</strong></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.7853</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">49.3</div>
-        </td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><b>0.97</b></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><strong>0.8917</strong></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><strong>0.9507</strong></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.7853</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">49.3</div></td>
       </tr>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;"><strong>LongCat&#8209;Image</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><u>0.95</u></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><u>0.8658</u></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><u>0.9361</u></div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;">0.7859</div>
-        </td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <div style="text-align: center;"><b>90.7</b></div>
-        </td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><u>0.95</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><u>0.8658</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><u>0.9361</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;">0.7859</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><b>90.7</b></div></td>
       </tr>
     </tbody>
   </table>
 </div>
-
-
-
 
 
 
