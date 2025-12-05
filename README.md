@@ -222,7 +222,6 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
 
 ### Text Rendering
 
-
 <div style="overflow-x: auto; margin-bottom: 16px;">
   <table style="border-collapse: collapse; width: 100%;">
     <thead>
@@ -285,59 +284,6 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
   </table>
 </div>
 
-
-
-<div style="overflow-x: auto; margin-bottom: 16px;">
-  <table style="border-collapse: collapse; width: 100%;">
-    <thead>
-      <tr>
-        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">Model</th>
-        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">GlyphDraw2↑</th>
-        <th style="padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" colspan="3">CVTG‑2K↑</th>
-        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;" rowspan="2">ChineseWord↑</th>
-      </tr>
-      <tr>
-        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">Acc</th>
-        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">NED</th>
-        <th style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de; background-color: #f6f8fa;">CLIPScore</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">HunyuanImage&#8209;3.0</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.78</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.7650</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.8765</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><strong>0.8121</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>58.5</u></td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Qwen&#8209;Image</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.93</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.8288</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.9297</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.8059</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">56.6</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Seedream&nbsp;4.0</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><b>0.97</b></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><strong>0.8917</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><strong>0.9507</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.7853</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">49.3</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;"><strong>LongCat&#8209;Image</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.95</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.8658</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><u>0.9361</u></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;">0.7859</td>
-        <td style="padding: 8px; border: 1px solid #d0d7de; text-align: center;"><b>90.7</b></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 ### Human Evaluation (MOS)
 
