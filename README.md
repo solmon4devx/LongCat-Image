@@ -274,14 +274,6 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
   </table>
 </div>
 
-| **Model**         | **GlyphDraw2↑** | **CVTG&#8209;2K↑** | **ChineseWord↑** |
-|-------------------|-----------------|--------------------|------------------|
-| HunyuanImage-3.0  | 0.78            | 0.7650             | 58.5             |
-| Qwen-Image        | 0.93            | 0.8288             | 56.6             |
-| Seedream 4.0      | **0.97**        | **0.8917**         | 49.3             |
-| **LongCat-Image** | 0.95            | 0.8658             | **90.7**         |
-
-
 ### Human Evaluation (MOS)
 
 | **Model**         | **Alignment↑** | **Plausibility↑** | **Realism↑** | **Aesthetics↑** |
