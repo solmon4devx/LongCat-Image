@@ -275,11 +275,11 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
       </tr>
       <tr>
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;"><strong>LongCat&#8209;Image</strong></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><u>0.95</u></div></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><u>0.8658</u></div></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><u>0.9361</u></div></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;">0.7859</div></td>
-        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center;"><b>90.7</b></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><u>0.95</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><u>0.8658</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><u>0.9361</u></div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center">0.7859</div></td>
+        <td style="padding: 8px; border: 1px solid #d0d7de;"><div align="center"><b>90.7</b></div></td>
       </tr>
     </tbody>
   </table>
