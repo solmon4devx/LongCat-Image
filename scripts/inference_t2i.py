@@ -13,18 +13,18 @@ if __name__ == '__main__':
     text_processor = AutoProcessor.from_pretrained( checkpoint_dir, subfolder = 'tokenizer'  )
     transformer = LongCatImageTransformer2DModel.from_pretrained( checkpoint_dir , subfolder = 'transformer', 
         torch_dtype=torch.bfloat16, use_safetensors=True).to(device)
-    
+
     pipe = LongCatImagePipeline.from_pretrained(
         checkpoint_dir,
         transformer=transformer,
         text_processor=text_processor,
         torch_dtype=torch.bfloat16
     )
-    #pipe.to(device)
-    pipe.enable_model_cpu_offload()  # Enable offloading to optimize performance on devices with limited VRAM; about 17 GB of VRAM is needed.
+    # pipe.to(device)  # Uncomment for high VRAM devices (Faster inference)
+    pipe.enable_model_cpu_offload()  # Offload to CPU to save VRAM (Required ~17 GB); slower but prevents OOM
 
     prompt = '一个年轻的亚裔女性，身穿黄色针织衫，搭配白色项链。她的双手放在膝盖上，表情恬静。背景是一堵粗糙的砖墙，午后的阳光温暖地洒在她身上，营造出一种宁静而温馨的氛围。镜头采用中距离视角，突出她的神态和服饰的细节。光线柔和地打在她的脸上，强调她的五官和饰品的质感，增加画面的层次感与亲和力。整个画面构图简洁，砖墙的纹理与阳光的光影效果相得益彰，突显出人物的优雅与从容。'
-    
+
     enable_prompt_rewrite_api = False
     if enable_prompt_rewrite_api:
         prompt = prompt_rewrite_deepseek( prompt )

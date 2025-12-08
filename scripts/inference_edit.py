@@ -18,8 +18,8 @@ if __name__ == '__main__':
         text_processor=text_processor,
         torch_dtype=torch.bfloat16,
     )
-    #pipe = pipe.to(device)
-    pipe.enable_model_cpu_offload()  # Enable offloading to optimize performance on devices with limited VRAM; about 17 GB of VRAM is needed.
+    # pipe.to(device)  # Uncomment for high VRAM devices (Faster inference)
+    pipe.enable_model_cpu_offload()  # Offload to CPU to save VRAM (Required ~19 GB); slower but prevents OOM
 
     generator = torch.Generator("cpu").manual_seed(43)
     img = Image.open('assets/test.png').convert('RGB')
