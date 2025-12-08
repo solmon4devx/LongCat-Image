@@ -368,11 +368,14 @@ See [TRAINING.md](./train_examples/README.md) for detailed instructions.
 
 ## Community Works
 
+- [ComfyUI Longcat Image](https://github.com/sooxt98/comfyui_longcat_image) - Custom node extension for ComfyUI workflow.
+  
 Community works are welcome! Please PR or inform us in Issue to add your work.
 
 - [LoRA Adapters] Fine-tuned models for specific styles and domains
 - [ComfyUI Integration] Native support for ComfyUI workflow
 - [Diffusers Pipeline] HuggingFace Diffusers integration
+
 
 ## License Agreement
 
