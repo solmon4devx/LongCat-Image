@@ -84,7 +84,7 @@ class LongCatImageEditPipeline(
         text_encoder: AutoModel,
         tokenizer: AutoTokenizer,
         text_processor: AutoProcessor,
-        transformer=LongCatImageTransformer2DModel,
+        transformer: LongCatImageTransformer2DModel,
         image_encoder: CLIPVisionModelWithProjection = None,
         feature_extractor: CLIPImageProcessor = None,
     ):
@@ -301,7 +301,7 @@ class LongCatImageEditPipeline(
             latents = self._pack_latents(latents, batch_size, num_channels_latents, height, width)
         else:
             latents = latents.to(device=device, dtype=dtype)
-
+        image_latents = image_latents.to(device=device, dtype=dtype)
         latents_ids = prepare_pos_ids(modality_id=1,
                                         type='image',
                                         start=(prompt_embeds_length,
