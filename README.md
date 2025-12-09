@@ -362,7 +362,7 @@ The quantitative evaluation results on public benchmarks demonstrate LongCat-Ima
 
 ## Training Pipeline
 
-We provide training code that enables advanced development of our LongCat‑Image‑Dev model, including SFT, LoRA, DPO, and Edit training.
+We provide training code that enables advanced development of our LongCat‑Image‑Dev and model, including SFT, LoRA, DPO, and Image Editing training.
 
 See [TRAINING.md](./train_examples/README.md) for detailed instructions.
 
