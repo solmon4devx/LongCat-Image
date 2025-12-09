@@ -6,7 +6,7 @@
 <hr>
 
 <div align="center" style="line-height: 1;">
-    <a href='https://github.com/meituan-longcat/LongCat-Image/blob/main/assets/LongCat_Image_Technical_Report.pdf'><img src='https://img.shields.io/badge/Technical Report-PDF-red'></a>
+    <a href='https://arxiv.org/pdf/2512.07584'><img src='https://img.shields.io/badge/Technical Report-PDF-red'></a>
     <a href='https://longcat.ai/'><img src="https://img.shields.io/badge/🤖%20Demo-LongCat--Image-ADFF2F?color=29E154&logoColor=white"></a>
     <a href='https://github.com/meituan-longcat/LongCat-Image'><img src='https://img.shields.io/badge/GitHub-Code-black'></a>
     <a href='https://github.com/meituan-longcat/LongCat-Flash-Chat/blob/main/figures/wechat_official_accounts.png'><img src='https://img.shields.io/badge/WeChat-LongCat-brightgreen?logo=wechat&logoColor=white'></a>
@@ -393,11 +393,11 @@ Nothing in this Model Card should be interpreted as altering or restricting the 
 We kindly encourage citation of our work if you find it useful.
 
 ```bibtex
-@misc{LongCat-Image,
-    author={Meituan LongCat Team},
-    title={LongCat-Image Technical Report},
-    year={2025},
-    howpublished={\url{https://github.com/meituan-longcat/LongCat-Image}},
+@article{LongCat-Image,
+      title={LongCat-Image Technical Report},
+      author={Meituan LongCat Team and  Hanghang Ma and Haoxian Tan and Jiale Huang and Junqiang Wu and Jun-Yan He and Lishuai Gao and Songlin Xiao and Xiaoming Wei and Xiaoqi Ma and Xunliang Cai and Yayong Guan and Jie Hu},
+	    journal={arXiv preprint arXiv:2512.07584},
+      year={2025}
 }
 ```
 
