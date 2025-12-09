@@ -106,7 +106,7 @@ class LongCatImageEditPipeline(
         # by the patch size. So the vae scale factor is multiplied by the patch size to account for this
         self.image_processor = VaeImageProcessor(vae_scale_factor=self.vae_scale_factor * 2)
         self.image_processor_vl = text_processor.image_processor
-        
+
         self.image_token = "<|image_pad|>"
         self.prompt_template_encode_prefix = "<|im_start|>system\nAs an image editing expert, first analyze the content and attributes of the input image(s). Then, based on the user's editing instructions, clearly and precisely determine how to modify the given image(s), ensuring that only the specified parts are altered and all other aspects remain consistent with the original(s).<|im_end|>\n<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>"
         self.prompt_template_encode_suffix = '<|im_end|>\n<|im_start|>assistant\n'
@@ -118,18 +118,13 @@ class LongCatImageEditPipeline(
 
 
     @torch.inference_mode()
-    def encode_prompt(self,
-                      image,
-                      prompts,
-                      device,
-                      dtype):
+    def encode_prompt(self, image, prompts):
         raw_vl_input = self.image_processor_vl(images=image,return_tensors="pt")
         pixel_values = raw_vl_input['pixel_values']
         image_grid_thw = raw_vl_input['image_grid_thw']
 
-        prompts = [prompt.strip('"') if prompt.startswith('"') and prompt.endswith('"') else prompt for prompt in prompts]
         all_tokens = []
-        
+
         for clean_prompt_sub, matched in split_quotation(prompts[0]):
             if matched:
                 for sub_word in clean_prompt_sub:
@@ -147,7 +142,7 @@ class LongCatImageEditPipeline(
             return_attention_mask=True,
             return_tensors='pt')
         text = self.prompt_template_encode_prefix
-        
+
         merge_length = self.image_processor_vl.merge_size**2
         while self.image_token in text:
             num_image_tokens = image_grid_thw.prod() // merge_length
@@ -161,7 +156,7 @@ class LongCatImageEditPipeline(
 
         prefix_tokens = torch.tensor(prefix_tokens,dtype=text_tokens_and_mask.input_ids.dtype)
         suffix_tokens = torch.tensor(suffix_tokens,dtype=text_tokens_and_mask.input_ids.dtype)
-        
+
         input_ids = torch.cat((prefix_tokens, text_tokens_and_mask.input_ids[0], suffix_tokens), dim=-1 )
         attention_mask = torch.cat((prefix_tokens_mask, text_tokens_and_mask.attention_mask[0], suffix_tokens_mask), dim=-1)
 
@@ -186,7 +181,7 @@ class LongCatImageEditPipeline(
         text_ids = prepare_pos_ids(modality_id=0,
                                    type='text',
                                    start=(0, 0),
-                                   num_token=prompt_embeds.shape[1]).to(device, dtype=dtype)
+                                   num_token=prompt_embeds.shape[1]).to(self.device)
 
         return prompt_embeds, text_ids
 
@@ -263,7 +258,7 @@ class LongCatImageEditPipeline(
         device,
         generator,
         latents=None,
-    ): 
+    ):
         # VAE applies 8x compression on images but we must also account for packing which requires
         # latent height and width to be divisible by 2.
         height = 2 * (int(height) // (self.vae_scale_factor * 2))
@@ -288,8 +283,8 @@ class LongCatImageEditPipeline(
                                            start=(prompt_embeds_length,
                                                   prompt_embeds_length),
                                            height=height//2,
-                                           width=width//2).to(device, dtype=torch.float64)
-        
+                                           width=width//2).to(device)
+
         if isinstance(generator, list) and len(generator) != batch_size:
             raise ValueError(
                 f"You have passed a list of generators of length {len(generator)}, but requested an effective batch"
@@ -307,7 +302,7 @@ class LongCatImageEditPipeline(
                                         start=(prompt_embeds_length,
                                                prompt_embeds_length),
                                         height=height//2,
-                                        width=width//2).to(device, dtype=torch.float64)
+                                        width=width//2).to(device)
 
         return latents, image_latents, latents_ids, image_latents_ids
 
@@ -355,7 +350,7 @@ class LongCatImageEditPipeline(
 
         image_size = image[0].size if isinstance(image, list) else image.size
         calculated_width, calculated_height = calculate_dimensions(1024 * 1024, image_size[0]*1.0/image_size[1])
-        
+
         self._guidance_scale = guidance_scale
         self._joint_attention_kwargs = joint_attention_kwargs
         self._current_timestep = None
@@ -368,28 +363,24 @@ class LongCatImageEditPipeline(
             batch_size = len(prompt)
         else:
             batch_size = prompt_embeds.shape[0]
-        
+
         device = self._execution_device
 
         image = self.image_processor.resize(image, calculated_height, calculated_width)
         prompt_image = self.image_processor.resize(image, calculated_height//2, calculated_width//2)
         image = self.image_processor.preprocess(image, calculated_height, calculated_width)
-        
+
         negative_prompt = '' if negative_prompt is None else negative_prompt
         negative_prompt = [negative_prompt]*num_images_per_prompt
         prompt = [prompt]*num_images_per_prompt
 
         prompt_embeds, text_ids = self.encode_prompt(
             image=prompt_image,
-            prompts=prompt,
-            device=device,
-            dtype=torch.float64
+            prompts=prompt
         )
         negative_prompt_embeds, negative_text_ids = self.encode_prompt(
             image=prompt_image,
-            prompts=negative_prompt, 
-            device = device, 
-            dtype=torch.float64
+            prompts=negative_prompt
         )
 
         # 4. Prepare latent variables

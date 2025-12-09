@@ -210,14 +210,9 @@ class LongCatImagePipeline(
         )[0]
         rewrite_prompt= output_text
         return rewrite_prompt
-    
-    @torch.inference_mode()
-    def encode_prompt(self,
-                      prompts,
-                      device,
-                      dtype):
 
-        prompts = [prompt.strip('"') if prompt.startswith('"') and prompt.endswith('"') else prompt for prompt in prompts]
+    @torch.inference_mode()
+    def encode_prompt(self, prompts):
         all_tokens = []
         for clean_prompt_sub, matched in split_quotation(prompts[0]):
             if matched:
@@ -243,7 +238,7 @@ class LongCatImagePipeline(
 
         prefix_tokens = torch.tensor(prefix_tokens,dtype=text_tokens_and_mask.input_ids.dtype)
         suffix_tokens = torch.tensor(suffix_tokens,dtype=text_tokens_and_mask.input_ids.dtype)
-                
+
         input_ids = torch.cat( (prefix_tokens, text_tokens_and_mask.input_ids[0], suffix_tokens), dim=-1 )
         attention_mask = torch.cat( (prefix_tokens_mask, text_tokens_and_mask.attention_mask[0], suffix_tokens_mask), dim=-1 )
 
@@ -263,9 +258,9 @@ class LongCatImagePipeline(
         text_ids = prepare_pos_ids(modality_id=0,
                                    type='text',
                                    start=(0, 0),
-                                   num_token=prompt_embeds.shape[1]).to(device, dtype=dtype)
+                                   num_token=prompt_embeds.shape[1]).to(self.device)
 
-        return prompt_embeds,  text_ids
+        return prompt_embeds, text_ids
 
     @staticmethod
     def _pack_latents(latents, batch_size, num_channels_latents, height, width):
@@ -350,8 +345,8 @@ class LongCatImagePipeline(
                                                start=(self.max_tokenizer_len,
                                                       self.max_tokenizer_len),
                                                height=height//2,
-                                               width=width//2).to(device, dtype=torch.float64)
-        
+                                               width=width//2).to(device)
+
         if latents is not None:
             return latents.to(device=device, dtype=dtype), latent_image_ids
 
@@ -436,7 +431,7 @@ class LongCatImagePipeline(
             pixel_step= self.vae_scale_factor * 2
             height = int( height/pixel_step )*pixel_step
             width = int( width/pixel_step )*pixel_step
-        
+
         self._guidance_scale = guidance_scale
         self._joint_attention_kwargs = joint_attention_kwargs
         self._current_timestep = None
@@ -449,17 +444,17 @@ class LongCatImagePipeline(
             batch_size = len(prompt)
         else:
             batch_size = prompt_embeds.shape[0]
-        
+
         device = self._execution_device
         if enable_prompt_rewrite:
             prompt = self.rewire_prompt(prompt, device )
-        
+
         negative_prompt = '' if negative_prompt is None else negative_prompt
         negative_prompt = [negative_prompt]*num_images_per_prompt
         prompt = [prompt]*num_images_per_prompt
 
-        prompt_embeds, text_ids = self.encode_prompt(prompt, device, dtype=torch.float64)
-        negative_prompt_embeds, negative_text_ids = self.encode_prompt(negative_prompt, device, dtype=torch.float64)
+        prompt_embeds, text_ids = self.encode_prompt(prompt)
+        negative_prompt_embeds, negative_text_ids = self.encode_prompt(negative_prompt)
 
         # 4. Prepare latent variables
         num_channels_latents = 16
@@ -515,7 +510,7 @@ class LongCatImagePipeline(
 
                 latent_model_input = torch.cat([latents] * 2) if self.do_classifier_free_guidance else latents
                 timestep = t.expand(latent_model_input.shape[0]).to(latents.dtype)
-                
+
                 noise_pred = self.transformer(
                     hidden_states=latent_model_input,
                     timestep=timestep / 1000,
@@ -530,7 +525,7 @@ class LongCatImagePipeline(
                     noise_pred_uncond, noise_pred_text = noise_pred.chunk(2, dim=0)
                     noise_pred = noise_pred_uncond + self.guidance_scale * \
                             (noise_pred_text - noise_pred_uncond)
-                    
+
                     if enable_cfg_renorm:
                         cond_norm = torch.norm(noise_pred_text, dim=-1, keepdim=True)
                         noise_norm = torch.norm(noise_pred, dim=-1, keepdim=True)
