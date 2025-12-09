@@ -87,7 +87,7 @@ You need to create a txt file with key-values in the table below:
 
 ```bash
 
-bash ./train_examples/edit/train.sh
+bash ./train_examples/edit_sft/train.sh
 
 # All training setting in train_config.yaml
 
