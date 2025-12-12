@@ -134,11 +134,11 @@ huggingface-cli download meituan-longcat/LongCat-Image-Edit --local-dir ./weight
 > Leveraging a stronger LLM for prompt refinement can further enhance image generation quality. Please refer to [inference_t2i.py](https://github.com/meituan-longcat/LongCat-Image/blob/main/scripts/inference_t2i.py#L28) for detailed usage instructions.
 
 > [!CAUTION]
-> **Special Handling for Text Rendering**
+> **📝 Special Handling for Text Rendering**
 >
-> For both Text-to-Image and Image Editing tasks involving text generation, **you must enclose the target text within quotes (`""`)**.
+> For both Text-to-Image and Image Editing tasks involving text generation, **you must enclose the target text within single or double quotation marks** (both English '...' / "..." and Chinese ‘...’ / “...” styles are supported).
 >
-> **Reason:** The tokenizer applies **character-level encoding** specifically to content found inside quotes. Failure to use explicit quotation marks will result in a significant degradation of text rendering quality.
+> **Reasoning:** The model utilizes a specialized **character-level encoding** strategy specifically for quoted content. Failure to use explicit quotation marks prevents this mechanism from triggering, which will severely compromise the text rendering capability.
 
 ```python
 import torch
