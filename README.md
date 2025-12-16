@@ -66,20 +66,12 @@ photorealism, deployment efficiency, and developer accessibility prevalent in cu
 
 ### Installation
 
-Clone the repo:
-
-```shell
-git clone --single-branch --branch main https://github.com/meituan-longcat/LongCat-Image
-cd LongCat-Image
-```
-
-Install dependencies:
 ```shell
 # create conda environment
 conda create -n longcat-image python=3.10
 conda activate longcat-image
 
-# for inference, install other requirements
+# install requirements for model inference
 pip install -r infer_requirements.txt
 pip install git+https://github.com/huggingface/diffusers
 ```
