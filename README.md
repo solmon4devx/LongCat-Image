@@ -41,11 +41,14 @@ photorealism, deployment efficiency, and developer accessibility prevalent in cu
 
 [//]: # (For more details, please refer to the comprehensive [***LongCat-Image Technical Report***]&#40;https://arxiv.org/abs/2412.11963&#41;.)
 
-### 📣 News
-- 🌟 **[2025-12-16]** LongCat-Image is now available in Diffusers!🤗 Please check the example below for detail! Thanks to the Diffusers team for their technical support.
+### News
+- 🔥 **[2025-12-16]** LongCat-Image is now fully supported in **Diffusers**!
+- 🔥 **[2025-12-09]** **[T2I-CoreBench](https://t2i-corebench.github.io/)** results are out! LongCat-Image ranks **2nd** among all open-source models in comprehensive performance, surpassed only by the 32B-parameter Flux2.dev.
+- 🔥 **[2025-12-08]** We released our [Technical Report](https://www.arxiv.org/abs/2512.07584) on arXiv!
+- 🔥 **[2025-12-05]** We released the weights for LongCat-Image, LongCat-Image-Dev, and LongCat-Image-Image on [Hugging Face](https://huggingface.co/meituan-longcat/models) and [ModelScope](https://modelscope.cn/organization/meituan-longcat?tab=model).
 
 
-## 🎨 Showcase
+## Showcase
 
 ### Text-to-Image
 
@@ -158,7 +161,7 @@ if __name__ == '__main__':
         enable_cfg_renorm=True,
         enable_prompt_rewrite=True
     ).images[0]
-    image.save(f'./longcat_image_t2i_example.png')
+    image.save('./t2i_example.png')
 ```
 
 ### Run Image Editing
